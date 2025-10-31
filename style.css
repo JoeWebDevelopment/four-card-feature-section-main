@@ -89,7 +89,7 @@ body{
     font-size: 0.938rem;
     line-height: 140%;
     letter-spacing: 0px;
-    text-align: left;
+    text-align: center;
 }
 /* preset 5 */
 .card-body{
@@ -164,12 +164,10 @@ body{
             margin: 0;
             text-wrap: nowrap;
         }
-
         .body-text{
-            max-width: 316px;
-        }
-
-        
+            margin: 0;
+            text-align: center;
+        }  
     }
 
 }
