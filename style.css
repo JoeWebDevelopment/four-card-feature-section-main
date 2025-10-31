@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@layer customproperites{
+    /* */
+   :root{
+
+    --clr-gray-drk: #4D4F62;
+    --clr-gray-light: #6a7178;
+    --clr-neutral: #FFF;
+
+    --clr-red: #EA5454;
+    --clr-cyan: #44D3d2;
+    --clr-blue: #549Ef2;
+    --clr-orange: #FCAE4A;
+
+    /* spacing */
+
+    --spacing-xlrg: 2.5rem;
+    --spacing-lrg: 2rem;
+    --spacing-md: 1.5rem;
+    --spacing-sm: 1rem;
+    --spacing-xsm: .5rem;
+
+    --ff-body: "Poppins", sans-serif;
+
+   } 
+}
+
+
+body{
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    width: 100%;
+}
+
+
+  main{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }  
+
+  .header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 5rem;
+  }
+  .header-wrapper{
+    max-width: 540px;
+  }
+
+/* preset 3 */
+.card-heading{
+    font-family: var(--ff-body);
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 135%;
+    letter-spacing: 0px;
+    
+}
+/* preset 1 */
+.heading-bold{
+    font-size: 2.25rem;
+    font-weight: 600;
+    font-family: var(--ff-body);
+    line-height: 140%;
+    letter-spacing: 0px;
+    display: flex;
+    flex-direction: column;
+ 
+}
+/* preset 2 */
+.heading{
+    font-family: var(--ff-body);
+    font-weight: 200;
+    font-size: 2.25rem;
+    line-height: 140%;
+    letter-spacing: 0px;
+    text-align: center;
+}
+/* preset 4 */
+.body-text{
+    font-family: var(--ff-body);
+    font-weight: 400;
+    font-size: 0.938rem;
+    line-height: 140%;
+    letter-spacing: 0px;
+    text-align: center;
+}
+/* preset 5 */
+.card-body{
+    font-family: var(--ff-body);
+    font-weight: 400;
+    font-size: 0.813rem;
+    line-height: 140%;
+    letter-spacing: 0px;
+}
+
+.card{
+    background-color: white;
+    padding: 2rem;
+    display: flex;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: 0px 8px 11px -6px var(--clr-gray-drk);
+
+    img{
+        align-self: flex-end;
+        justify-self: flex-end;
+    }
+}
+
+.cards-container{
+    display: grid;
+    gap: 2rem;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+    ".  team  ."
+    "supervisor team calc"
+    "supervisor karma calc"
+    ". karma ."
+    ;
+   max-width: 1114px;
+   padding-inline: 2rem;
+
+}
+
+@media(max-width: 768px){
+    .cards-container{
+     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    grid-template-areas: 
+    ".  team  ."
+    "supervisor karma"
+    "supervisor karma"
+    ". calc .";
+
+    max-width: 660px;
+    border: 2px solid black;
+    }
+}
+
+.card[data-type-card="supervisor"]{
+  border-top: 3px solid var(--clr-cyan);
+  grid-area: supervisor;
+}
+.card[data-type-card="team"]{
+    border-top: 3px solid var(--clr-red);
+    grid-area: team;
+}
+.card[data-type-card="karma"]{
+    border-top: 3px solid var(--clr-orange);
+    grid-area: karma;
+}
+.card[data-type-card="calc"]{
+    border-top: 3px solid var(--clr-cyan);
+    grid-area: calc;
+}
